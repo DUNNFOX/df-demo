@@ -22,18 +22,18 @@
         <div style="border:2px solid black ; padding: 2px;">
             <form action="/createUser" method="post">
                 <h1> Sign in</h1>
-
+<input type="hidden" name="id" value="${id}">
                 <label >First Name</label> <br><input type="text" name="firstName"
-                    placeholder="Enter Your First Name"><br><br>
+                    placeholder="Enter Your First Name" value="${student.firstName}"><br><br>
 
                 <label>Last Name</label><br> <input type="text" name="lastName"
-                    placeholder="Enter Your Last Name"><br><br>
+                    placeholder="Enter Your Last Name" value="${student.lastName}"><br><br>
 
                 <label>E-mail Add</label> <br><input type="text" name="email"
-                    placeholder="Enter Your E-mail Add"><br><br>
+                    placeholder="Enter Your E-mail Add"  value="${student.email}"><br><br>
 
                 <label>Mob No.</label><br> <input type="number" name="mobile"
-                    placeholder="Enter Your Mob.No."><br><br>
+                    placeholder="Enter Your Mob.No." value="${student.mobile}"><br><br>
 
                 <input type="submit" value="save">
                 <input type="button" value="delete">
@@ -67,7 +67,13 @@
                      </form>
                      </td>
 
+                     <td>
+                         <form action="/updateStudent" method="post">
 
+                             <input type="hidden" name="id"value="${user.id}">
+                             <input type="submit" value = "edit">
+                         </form>
+                     </td>
                  </tr>
                     </c:forEach>
             </table>
